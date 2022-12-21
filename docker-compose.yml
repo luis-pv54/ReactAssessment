@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  sample:
+    container_name: sample
+    tty: true
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    command:
+      - /app/boot.sh
